@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NIRM" />
+
+    <EditText
+        android:id="@+id/editnirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:singleline="true" 
+        android:singleline="true" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NAMA MAHASISWA" />
+
+    <EditText
+        android:id="@+id/editnama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleline="true" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PROGRAN STUDI" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/si"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SI" />
+
+        <RadioButton
+            android:id="@+id/sk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SK" />
+
+        <RadioButton
+            android:id="@+id/mi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MI" />
+
+        <RadioButton
+            android:id="@+id/tk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.43"
+            android:text="TK" />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btnok"
+        android:layout_width="94dp"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        andoris:width="80dp" />
+
+    <TextView
+        android:id="@+id/tvhasil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HASIL INPUTAN ANDA ADALAH" />
+
+</LinearLayout>
+
+
+Project Activity
+package com.quis;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.view;
+import android.view.view.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+
+public class Quis_ristasianiparActivity extends Activity implements OnClickListener {
+    /** Called when the activity is first created. */
+	Button btnok;
+	EditText editnirm;
+	EditText editnama;
+	TextView tvhasil;
+	
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        
+        btnok = (Button)findViewbyId(R.id.btnok);
+        editnirm = (EditText)findViewbyId(R.id.editnirm);
+        editnama = (EditText)findViewbyId(R.id.editnama);
+        tvhasil = (TextView)findViewbyId(R.id.tvhasil);
+        
+        btnok.setOnClickListener(this);
+    }
+    public void onClick(View v) {
+    	if (v == btnok) {
+    		   tvhasil.setText("HASIL INPUTAN ANDA ADALAH : " +editnirm.getText());
+    }
+    
+}
