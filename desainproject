@@ -1,0 +1,287 @@
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.RadioButton;
+
+public class NovalsmokeActivity extends Activity implements OnClickListener {
+	
+	Button btn_Ok; 
+	EditText edtnirm, edtnama;
+	TextView tvhasilnirm, tvhasilnama, tvhasilstudi;
+
+	
+	@Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        btn_Ok = (Button) findViewById(R.id.btn_Ok);
+        edtnirm = (EditText) findViewById(R.id.edtnirm);
+        edtnama = (EditText) findViewById(R.id.edtnama);
+        tvhasilnirm = (TextView) findViewById(R.id.tvhasilnirm);
+        tvhasilnama = (TextView) findViewById(R.id.tvhasilnama);
+      
+        btn_Ok.setOnClickListener(this);
+       
+    }
+	 public void onClick(View v){
+		 if (v == btn_Ok){
+			 tvhasilnirm.setText("Nirm Anda Adalah : " + edtnirm.getText());
+			 tvhasilnama.setText("Nama Anda Adalah : " + edtnama.getText());
+		 }else{
+			 finish();
+			 }
+		 }
+		 
+ 
+}
+
+
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nirm"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/edtnirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Masukkan Nirm Anda"
+        android:singleLine="true"/>
+
+    <TextView
+        android:id="@+id/TextView02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama Mahasiswa"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/edtnama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:text="Masukkan Nama Anda" 
+        android:singleLine="true">
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Program Studi"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/ednilai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"  />
+
+    <Button
+        android:id="@+id/btn_Ok"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="OK" />
+
+    <TextView
+        android:id="@+id/tvhasilnirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nirm Anda Adalah"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/tvhasilnama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama Anda Adalah"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/tvhasilstudi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Program Studi"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</LinearLayout>
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nirm"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/edtnirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Masukkan Nirm Anda"
+        android:singleLine="true"/>
+
+    <TextView
+        android:id="@+id/TextView02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama Mahasiswa"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/edtnama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:text="Masukkan Nama Anda" 
+        android:singleLine="true">
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Program Studi"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/ednilai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:text="Masukkan Nilai Anda" 
+        android:singleLine="true"/>
+
+    <Button
+        android:id="@+id/btn_Ok"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="OK" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvhasilnirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="YUDISIUM NILAI ATAS NAMA"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/tvyudis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.RadioButton;
+
+public class NovalsmokeeActivity extends Activity implements OnClickListener {
+	
+	Button btn_Ok; 
+	EditText edtnirm, edtnama, ednilai;
+	TextView tvhasilnirm, tvhasilnama, tvhasilstudi, tvyudis;
+
+	
+	@Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        btn_Ok = (Button) findViewById(R.id.btn_Ok);
+        edtnirm = (EditText) findViewById(R.id.edtnirm);
+        edtnama = (EditText) findViewById(R.id.edtnama);
+        ednilai = (EditText) findViewById(R.id.ednilai);
+        tvhasilnirm = (TextView) findViewById(R.id.tvhasilnirm);
+        tvyudis = (TextView) findViewById(R.id.tvyudis);
+      
+        btn_Ok.setOnClickListener(this);
+       
+    }
+	 public void onClick(View v){
+		 if (v == btn_Ok){
+			 tvhasilnirm.setText("YUDISIUM NILAI ATAS NAMA : " + edtnama.getText());
+			 tvyudis.setText("YUDISIUM NILAI ATAS NAMA : " + edtnirm.getText());
+		 }else{
+			 finish();
+			 }
+		 }
+		 
+ 
+}
